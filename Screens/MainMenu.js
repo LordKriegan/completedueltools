@@ -12,12 +12,6 @@ class MainMenu extends Component {
                     alignContent: 'center'
                 }}
             >   
-                {/* <View>
-                    <Button onPress={() => this.props.navigation.navigate("CardViewer")} title="Card Viewer" />
-                    <Button onPress={() => this.props.navigation.navigate("DeckBuilder")} title="Deck Builder" />
-                    <Button onPress={() => this.props.navigation.navigate("Calculator")} title="Calculator" />
-                    <Button onPress={() => this.props.navigation.navigate("RulesResource")} title="Rules Resource" />
-                </View> */}
                 <View style={styles.CenterMenu}>
                     <View style={styles.ViewFlexRow}>
                         <TouchableHighlight onPress={() => this.props.navigation.navigate("CardViewer")}>
