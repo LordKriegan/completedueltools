@@ -1,21 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { Platform, StatusBar, StyleSheet, Text, View, Image } from 'react-native';
 
 import { createStackNavigator } from 'react-navigation';
 
 //(screens)
 import MainMenu from './Screens/MainMenu';
 import CardViewer from './Screens/CardViewer';
-import Card from './Screens/Card';
+
 import DeckBuilder from './Screens/DeckBuilder';
 import Calculator from './Screens/Calculator';
 import RulesResource from './Screens/RulesResource';
 //(/screens)
+//(modals)
+import Card from './Modals/Card';
+//(/modals)
 
 export default class App extends React.Component {
   render() {
     return (
-      <AppNavigator />
+      <RootStack />
     );
   }
 }
@@ -33,45 +36,45 @@ const ImageHeader = () => {
   );
 }
 
-const AppNavigator = createStackNavigator({
+const AppStack = createStackNavigator({
   MainMenu: {
-    screen: MainMenu,
-    navigationOptions: {
-      headerBackground: <ImageHeader style={{ justifyContent: "center" }}/>
-    }
+    screen: MainMenu
   },
   CardViewer: {
-    screen: CardViewer,
-    navigationOptions: {
-      headerBackground: <ImageHeader />
-    }
-  },
-  Card: {
-    screen: Card,
-    navigationOptions: {
-      headerBackground: <ImageHeader />
-    }
+    screen: CardViewer
   },
   DeckBuilder: {
-    screen: DeckBuilder,
-    navigationOptions: {
-      headerBackground: <ImageHeader />
-    }
+    screen: DeckBuilder
   },
   Calculator: {
-    screen: Calculator,
-    navigationOptions: {
-      headerBackground: <ImageHeader />
-    }
+    screen: Calculator
   },
   RulesResource: {
-    screen: RulesResource,
-    navigationOptions: {
-      headerBackground: <ImageHeader />
-    }
+    screen: RulesResource
+  }
+}, {
+  navigationOptions: {
+    headerBackground: <ImageHeader style={{ justifyContent: "center" }}/>
   }
 })
 
+const RootStack = createStackNavigator(
+  {
+    Main: {
+      screen: AppStack,
+    },
+    Card: {
+      screen: Card
+    }
+  },
+  {
+    mode: 'modal',
+    headerMode: 'none',
+    cardStyle: {
+      paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight
+    }
+  }
+);
 
 //background image from https://www.deviantart.com/slackermagician/art/millenium-rare-foil-Finished-product-546961387
 //calc icon from https://png.icons8.com/color/100/calculator.png

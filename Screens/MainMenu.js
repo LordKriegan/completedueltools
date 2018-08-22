@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button, ImageBackground, TouchableHighlight, Image } from 'react-native';
+import { View, Text, StyleSheet, Button, ImageBackground, TouchableOpacity, Image } from 'react-native';
 
 class MainMenu extends Component {
     render() {
@@ -14,21 +14,21 @@ class MainMenu extends Component {
             >   
                 <View style={styles.CenterMenu}>
                     <View style={styles.ViewFlexRow}>
-                        <TouchableHighlight onPress={() => this.props.navigation.navigate("CardViewer")}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate("CardViewer")}>
                             <Image source={require('../images/CardViewer.png')} />
-                        </TouchableHighlight>
+                        </TouchableOpacity>
 
-                        <TouchableHighlight onPress={() => this.props.navigation.navigate("DeckBuilder")}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate("DeckBuilder")}>
                             <Image source={require('../images/DeckBuilder.png')} />
-                        </TouchableHighlight>
+                        </TouchableOpacity>
                     </View>
                     <View style={styles.ViewFlexRow}>
-                        <TouchableHighlight onPress={() => this.props.navigation.navigate("Calculator")}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate("Calculator")}>
                             <Image source={require('../images/Calculator.png')} />
-                        </TouchableHighlight>
-                        <TouchableHighlight onPress={() => this.props.navigation.navigate("RulesResource")}>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate("RulesResource")}>
                             <Image source={require('../images/RulesResource.png')} />
-                        </TouchableHighlight>
+                        </TouchableOpacity>
                     </View>
                 </View>
 
