@@ -12,7 +12,7 @@ import Calculator from './Screens/Calculator';
 import RulesResource from './Screens/RulesResource';
 //(/screens)
 //(modals)
-import Card from './Modals/Card';
+import ModalContainer from './Modals/ModalContainer'
 //(/modals)
 
 export default class App extends React.Component {
@@ -63,8 +63,8 @@ const RootStack = createStackNavigator(
     Main: {
       screen: AppStack,
     },
-    Card: {
-      screen: Card
+    Modal: {
+      screen: ModalContainer
     }
   },
   {

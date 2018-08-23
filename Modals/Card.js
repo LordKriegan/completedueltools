@@ -7,7 +7,7 @@ class Card extends Component {
     }
 
     componentDidMount() {
-        fetch("https://www.ygohub.com/api/card_info?name=" + this.props.navigation.state.params.cardName, { method: "GET" })
+        fetch("https://www.ygohub.com/api/card_info?name=" + this.props.myProps.cardName, { method: "GET" })
             .then((response) => response.json())
             .then((responseJson) => {
                 console.log(responseJson.card, responseJson.card['thumbnail_path']);
@@ -21,17 +21,7 @@ class Card extends Component {
     }
     render() {
         return (
-            <ImageBackground
-                source={require('../images/background.png')}
-                style={{
-                    flex: 1,
-                    flexDirection: 'column',
-                    alignContent: 'center'
-                }}
-            >
-                <TouchableOpacity style={{ paddingTop: 5, paddingLeft: 5 }} onPress={() => this.props.navigation.goBack()}>
-                    <Text>X</Text>
-                </TouchableOpacity>   
+            <View> 
                 {
                     (this.state.card !== '')
                     ? <ScrollView contentContainerStyle={{alignItems: 'center'}}>
@@ -68,7 +58,7 @@ class Card extends Component {
                       </ScrollView>
                     : <Text>Loading Card Info...</Text> 
                 }
-            </ImageBackground>
+            </View>
         );
     }
 }

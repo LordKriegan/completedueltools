@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, StyleSheet, ImageBackground, FlatList, TouchableHighlight } from 'react-native';
-
+import Card from '../Modals/Card';
 class CardViewer extends Component {
     state = {
         cardList: '',
@@ -56,7 +56,7 @@ class CardViewer extends Component {
                             renderItem={
                                 ({item}) => {
                                     return(
-                                        <TouchableHighlight style={styles.ListItem} onPress={() => this.props.navigation.navigate('Card', { cardName: item })}>
+                                        <TouchableHighlight style={styles.ListItem} onPress={() => this.props.navigation.navigate('Modal', { myProps: { cardName: item }, comp: Card })}>
                                             <Text>{item}</Text>
                                         </TouchableHighlight>
                                     )
