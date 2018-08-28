@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Dimensions, View, Text, StyleSheet, ImageBackground, Button } from 'react-native';
 
 //rules resources
-import FastEffectFlowchart from '../Modals/RulesResources/FastEffectFlowchart'
+import FastEffectFlowchart from '../Modals/RulesResources/FastEffectFlowchart';
+import PhaseOrder from '../Modals/RulesResources/PhaseOrder';
 
 class RulesResource extends Component {
     goto = (compName) => {
@@ -16,11 +17,11 @@ class RulesResource extends Component {
             >
                 <View style={styles.btnContainer}>
                     <Button onPress={() => this.goto(FastEffectFlowchart)} title="Fast Effect Timing Chart" />
-                    <Button onPress={() => console.log("will open modal")} title="Phase Order" />
-                    <Button onPress={() => console.log("will open modal")} title="Battle Phase" />
+                    <Button onPress={() => this.goto(PhaseOrder)} title="Phase Order" />
+                    {/* <Button onPress={() => console.log("will open modal")} title="Battle Phase" /> */}
                     <Button onPress={() => console.log("will open modal")} title="Damage Step" />
                     <Button onPress={() => console.log("will open modal")} title="PSCT Definitions" />
-                    <Button onPress={() => console.log("will open modal")} title="Tournament Policies" />
+                    {/* <Button onPress={() => console.log("will open modal")} title="Tournament Policies" /> */}
                 </View>
             </ImageBackground>
         );
