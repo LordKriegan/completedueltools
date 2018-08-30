@@ -22,7 +22,7 @@ class PSCT extends Component {
                     <Text style={styles.title}>Text Structure</Text>
                 </TouchableOpacity>
                 {(this.state.textStruct)
-                    ? <View style={(this.state.textStruct) ? styles.openBox : styles.closedBox}>
+                    ? <View>
 
                         <Text style={styles.psctTxt}>All cards follow this format: "Activation conditions: costs and/or targets; effect."</Text>
 
@@ -107,19 +107,10 @@ class PSCT extends Component {
 }
 
 const styles = StyleSheet.create({
-    textContainers: {
-        alignItems: 'center'
-    },
     title: {
         fontSize: 20,
         textDecorationLine: 'underline',
         textAlign: 'center'
-    },
-    closedBox: {
-        height: 0
-    },
-    openBox: {
-        alignItems: 'center'
     },
     psctTxt: {
         textAlign: 'center'

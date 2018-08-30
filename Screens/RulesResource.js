@@ -5,6 +5,7 @@ import { Dimensions, View, Text, StyleSheet, ImageBackground, Button } from 'rea
 import FastEffectFlowchart from '../Modals/RulesResources/FastEffectFlowchart';
 import PhaseOrder from '../Modals/RulesResources/PhaseOrder';
 import PSCT from '../Modals/RulesResources/PSCT';
+import DmgStep from '../Modals/RulesResources/DmgStep';
 
 class RulesResource extends Component {
     goto = (compName) => {
@@ -20,7 +21,7 @@ class RulesResource extends Component {
                     <Button onPress={() => this.goto(FastEffectFlowchart)} title="Fast Effect Timing Chart" />
                     <Button onPress={() => this.goto(PhaseOrder)} title="Phase Order" />
                     {/* <Button onPress={() => console.log("will open modal")} title="Battle Phase" /> */}
-                    <Button onPress={() => console.log("will open modal")} title="Damage Step" />
+                    <Button onPress={() => this.goto(DmgStep)} title="Damage Step" />
                     <Button onPress={() => this.goto(PSCT)} title="PSCT Definitions" />
                     {/* <Button onPress={() => console.log("will open modal")} title="Tournament Policies" /> */}
                 </View>
